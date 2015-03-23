@@ -1,0 +1,106 @@
+body {
+	background-image: url("bg.jpg");
+	background-size: 150%;
+	background-attachment: fixed;
+	background-position: center;
+	padding-top: 20px;
+}
+
+label {
+	color: white;
+	font-size: 14pt;
+}
+
+input.upload {
+	color: white;
+	font-size: 14pt;
+	display: inline-block;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+p.help-block {
+	color: white;
+}
+
+div.jumbotron {
+	background-color: rgba(96, 118, 181, .85);
+	text-align: center;
+	padding-bottom: 10pt;
+}
+
+button.btn-primary {
+	background-color: rgb(168, 13, 13);
+	border-color: rgb(128, 10, 10);
+}
+
+button.btn-primary:hover {
+	background-color: rgb(105, 7, 7);
+	border-color: rgb(128, 10, 10);
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+div.logo {
+	background-image: url("logo.png");
+	width: 150px;
+	height: 150px;
+	background-size: 150px 150px;
+	display: inline-block;
+	margin-bottom: 15px;
+}
+
+input.form-control, select.form-control, textarea.form-control {
+	width: 70%;
+	display: inline-block;
+	background-color: transparent;
+	color: white;
+	border: 1px solid #fff;
+	height: 44px;
+	padding-bottom: 12px;
+	padding-top: 12px;
+	font-size: 15pt;
+}
+textarea.form-control {
+	height: 160px;
+}
+input.form-control, select, textarea.form-control{
+    color: #ffffff;
+}
+label.radio-inline-question {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: 400;
+	vertical-align: middle;
+	cursor: default;
+	padding-right: 7px;
+}
+
+input.form-control::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder {
+    color:    #ffffff;
+}
+input.form-control:-moz-placeholder, textarea.form-control:-moz-placeholder {
+    color:    #ffffff;
+}
+input.form-control::-moz-placeholder, textarea.form-control::-moz-placeholder {
+    color:    #ffffff;
+}
+input.form-control:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder {
+    color:    #ffffff;
+}
+
+p.footer {
+	color: white;
+	text-align: center;
+	font-size: 10pt;
+	margin-top: 30pt;
+	margin-bottom: 0pt;
+}
