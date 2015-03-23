@@ -10,7 +10,7 @@
     <div class="container">
 	    <div class="jumbotron">
 	        <div class="logo"></div>
-	        <form>
+	        <form name="assessment_form" method="post" action="submit.php">
 	            <div class="form-group">
 	                <input type="text" class="form-control" id="name" placeholder="Name">
     			</div>
@@ -66,11 +66,11 @@
     				<input type="radio" name="secured" id="secured_no" value="no"> No
     			</label>
     
-    			<div class="form-group">
+    			<!-- <div class="form-group">
     				<p class="help-block"></p>
     				<label for="image">Attach an Image (optional)</label>
     				<input type="file" class="upload" id="exampleInputFile">
-    			</div>
+    			</div> -->
     			<button type="submit" class="btn btn-primary btn-lg">Submit</button>
     		</form>
     		
