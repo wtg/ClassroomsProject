@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['email'])) {
-    include "sendto.php"; //Included the sending addresses there
+    require "sendto.php"; //Included the sending addresses there
 
     function died($error) {
         //error code
@@ -61,7 +61,7 @@ if(isset($_POST['email'])) {
         $bad = array("content-type","bcc:","to:","cc:","href");
         return str_replace($bad,"",$string);
     }
-    
+
     $email_subject  = "Classroom Assessment: " . $building;
 
     $email_message .= "Object is " . ucfirst($secured) . "\n";
