@@ -2,6 +2,8 @@
 
 if(isset($_POST['email'])) {
     require "sendto.php"; //Included the sending addresses there
+    //The above file must define the following two variables with valid emails:
+    //$fixx_email and $registrar_email
 
     function died($error) {
         //error code
@@ -72,7 +74,6 @@ if(isset($_POST['email'])) {
     $email_message .= "Description: " . clean_string($description) . "\n";
  
     // create email headers
-     
     $headers = 'From: '.$email_from."\r\n".'Reply-To: '.$email_from."\r\n".'X-Mailer: PHP/'.phpversion();
 
 
