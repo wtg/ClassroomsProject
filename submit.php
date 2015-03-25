@@ -79,7 +79,7 @@ if(isset($_POST['email'])) {
 
     @mail($registrar_email, $email_subject, $email_message, $headers);
 
-    if(strcmp($secured, "bolted") {
+    if(strcmp($secured, "bolted")) {
         @mail($fixx_email, $email_subject, $email_message, $headers);
     }
 ?>
