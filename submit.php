@@ -1,8 +1,7 @@
 <?php
- 
+
 if(isset($_POST['email'])) {
-    $fixx_email = "you@yourdomain.com";
-    $registrar_email = "you@yourdomain.com";
+    include "sendto.php"; //Included the sending addresses there
 
     function died($error) {
         //error code
@@ -14,31 +13,31 @@ if(isset($_POST['email'])) {
     }
 
     // validation expected data exists
-    if(!isset($_POST['name']) ||
-        !isset($_POST['RIN']) ||
-        !isset($_POST['email'])     ||
-        !isset($_POST['telephone']) ||
-        !isset($_POST['description'])) {
- 
+    if(!isset($_POST['name'])  || !isset($_POST['RIN'])         ||
+       !isset($_POST['email']) || !isset($_POST['building'])    ||
+       !isset($_POST['room'])  || !isset($_POST['description']) ||
+       !isset($_POST['secured'])) {
         died('The required fields were not completed.');       
  
     }
 
-    $name = $_POST['name']; // required
-    $RIN = $_POST['RIN']; // required
-    $email_from = $_POST['email']; // required
-    $description = $_POST['description']; // required 
+    $name           = $_POST['name'];
+    $RIN            = $_POST['RIN'];
+    $email_from     = $_POST['email'];
+    $building       = $_POST['building'];
+    $room           = $_POST['room'];
+    $description    = $_POST['description'];
+    $secured        = $_POST['secured'];
 
-    $email_subject = "Classroom Assessment";
- 
-    $error_message = "";
- 
+    $error_message  = "";
+
+    //Regular Expressions for validity checking
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
     $string_exp = "/^[A-Za-z .'-]+$/";
     $RIN_exp = "/^[0-9]*/";
 
     if(!preg_match($email_exp,$email_from)) {
-        $error_message .= 'The Email Address you entered does not appear to be valid. Please make sure you\'re using an RPI email.<br />';
+        $error_message .= 'The Email Address you entered does not appear to be valid. Please make sure you\'re using your RPI email.<br />';
     }
     if(!preg_match($string_exp,$name)) {
         $error_message .= 'The Name you entered does not appear to be valid.<br />';
@@ -56,23 +55,32 @@ if(isset($_POST['email'])) {
         died($error_message);
     }
 
-    $email_message = "Form details below.\n\n";
+    $email_message = "Assessment details below.\n\n";
  
     function clean_string($string) {
         $bad = array("content-type","bcc:","to:","cc:","href");
         return str_replace($bad,"",$string);
     }
+    
+    $email_subject  = "Classroom Assessment: " . $building;
 
-    $email_message .= "First Name: ".clean_string($first_name)."\n";
-    $email_message .= "Last Name: ".clean_string($last_name)."\n";
-    $email_message .= "Email: ".clean_string($email_from)."\n";
-    $email_message .= "Telephone: ".clean_string($telephone)."\n";
-    $email_message .= "Description: ".clean_string($description)."\n";
+    $email_message .= "Object is " . ucfirst($secured) . "\n";
+    $email_message .= "Name: "     . clean_string($name) . "\n";
+    $email_message .= "RIN: "      . clean_string($RIN) . "\n";
+    $email_message .= "Email: "    . clean_string($email_from) . "\n";
+    $email_message .= "Location: " . clean_string($building) . ", " . clean_string($room) . "\n";
+    $email_message .= "Description: " . clean_string($description) . "\n";
  
     // create email headers
      
     $headers = 'From: '.$email_from."\r\n".'Reply-To: '.$email_from."\r\n".'X-Mailer: PHP/'.phpversion();
-    @mail($email_to, $email_subject, $email_message, $headers);
+
+
+    @mail($registrar_email, $email_subject, $email_message, $headers);
+
+    if(strcmp($secured, "bolted") {
+        @mail($fixx_email, $email_subject, $email_message, $headers);
+    }
 ?>
  
 <!DOCTYPE html>
@@ -93,5 +101,6 @@ if(isset($_POST['email'])) {
         </div>
     </div>
 </body>
-</html> 
+</html>
+
 <?php } ?>
