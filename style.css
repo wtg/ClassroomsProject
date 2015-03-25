@@ -51,8 +51,8 @@ button.btn-primary:hover {
 div.logo {
 	background-image: url("logo.png");
 	width: 150px;
-	height: 150px;
-	background-size: 150px 150px;
+	height: 183px;
+	background-size: 150px 183px;
 	display: inline-block;
 	margin-bottom: 15px;
 }
