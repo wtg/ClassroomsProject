@@ -69,12 +69,11 @@ input.form-control, select.form-control, textarea.form-control {
 	padding-top: 12px;
 	font-size: 15pt;
 }
+
 textarea.form-control {
 	height: 160px;
 }
-input.form-control, select, textarea.form-control{
-    color: #ffffff;
-}
+
 label.radio-inline-question {
 	position: relative;
 	display: inline-block;
@@ -85,16 +84,11 @@ label.radio-inline-question {
 	padding-right: 7px;
 }
 
-input.form-control::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder {
-    color:    #ffffff;
-}
-input.form-control:-moz-placeholder, textarea.form-control:-moz-placeholder {
-    color:    #ffffff;
-}
-input.form-control::-moz-placeholder, textarea.form-control::-moz-placeholder {
-    color:    #ffffff;
-}
-input.form-control:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder {
+input.form-control, 							select, textarea.form-control,
+input.form-control::-webkit-input-placeholder,  textarea.form-control::-webkit-input-placeholder,
+input.form-control:-moz-placeholder, 			textarea.form-control:-moz-placeholder,
+input.form-control::-moz-placeholder, 			textarea.form-control::-moz-placeholder,
+input.form-control:-ms-input-placeholder, 		textarea.form-control:-ms-input-placeholder {
     color:    #ffffff;
 }
 
