@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classroom Assessment Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="logo"></div>
 <?php
 
 if(isset($_POST['email'])) {
@@ -83,25 +95,14 @@ if(isset($_POST['email'])) {
         @mail($fixx_email, $email_subject, $email_message, $headers);
     }
 ?>
- 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Classroom Assessment Form</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-</head>
-<body>
-    <div class="container">
-        <div class="jumbotron">
-            <div class="logo"></div>
-                <p>Thank you for notifying us about the problem! The information has been passed on to the appropriate administrative bodies.</p>
-                <br>
-                <p class="footer">Created jointly by the Web Technologies Group &amp; the Facilities and Services Committee.<br />Rensselaer Union 45th Student Senate</p>
+    <p>Thank you for notifying us about the problem! The information has been passed on to the appropriate administrative bodies.</p>
+
+<?php } else { ?>
+    <p>An error occurred.</p>
+<?php } ?>
+        <br>
+        <p class="footer">Created jointly by the Web Technologies Group &amp; the Facilities and Services Committee.<br />Rensselaer Union 45th Student Senate</p>
         </div>
     </div>
 </body>
 </html>
-
-<?php } ?>
